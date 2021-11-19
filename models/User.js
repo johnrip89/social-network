@@ -4,19 +4,23 @@ const UserSchema = new Schema(
   {
     username: {
       type: String,
-      required: true
+      required: true,
+      trim: true
     },
     email: {
       type: String,
-      required: true
+      required: true,
+      trim: true
     },
     thoughts: [],
     friends: []
   },
   {
     toJSON: {
+      virtuals: true,
       getters: true
-    }
+    },
+    id: false
   }
 );
 
